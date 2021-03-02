@@ -79,13 +79,13 @@ const config: webpack.Configuration = {
     historyApiFallback: true, // 리액트 라우터에 사용
     port: 3090,
     publicPath: '/dist/',
-    //     proxy: {
-    //         '/api/': {
-    //             target: 'http://localhost:3095',
-    //             changeOrigin: true,
-    //             ws: true,
-    //         },
-    //     },
+    proxy: {
+      '/api/': {
+        target: 'http://localhost:3095',
+        changeOrigin: true,
+        ws: true,
+      },
+    },
   },
 };
 
