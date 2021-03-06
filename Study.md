@@ -31,3 +31,20 @@ useCallback은 메서드를 새롭게 생성하지 않아 메서드 자체는 �
 
 # withCredentials 
 이것을 true로 해줘야 쿠키가 전달이 된다.
+
+# VFC vs FC
+children 쓰는 컴포넌트는 FC 안쓰는 컴포넌트는 VFC
+
+# revalidate() vs mutate()
+revalidate() 를 사용하면 응답에 정보가 있음에도 서버에 요청을 보내 총 2번을 보낸다.
+이 방법은 비 효율적이므로 mutate(response.data, false)를 사용하여 따로 서버에 요청을 보내지 않아도 해당 정보를 관리한다.
+두번째 인자는 shouldRevalidate 값이다. true면 우선 캐시로 변경후 변경한 값이 맞는지 확인하기 위해 서버에 요청한다. 이를 OPTIMISTIC UI라고 부른다.
+false를 할경우 서버에 요청까지도 하지 않는다.
+
+# dedupingInterval
+캐시 유지 기간이다. 2초라고 하면 2초동안 서버에 아무리 요청을 하더라도 한번만 보내고 나머지는 요청받은 데이터를 캐싱해서 보내준다.
+
+# console.log 단축키
+'hi'.log => console.log('hi');
+
+# hooks는 return아래, for, if안에 있으면 안된다. 

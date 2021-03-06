@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import { Button, Form, Header, Input, Label, LinkContainer, Error } from '@pages/SignUp/styles';
 import useSWR from 'swr';
@@ -25,6 +25,8 @@ const LogIn = () => {
           },
         )
         .then((response) => {
+          // 로그인 성공한 순간 호출
+          mutate(response.data, false);
           // revalidate();
         })
         .catch((error) => {
@@ -33,14 +35,14 @@ const LogIn = () => {
     },
     [email, password],
   );
+
+  if (data === undefined) {
+    return <div>로딩중...</div>;
+  }
   //
-  // if (data === undefined) {
-  //   return <div>로딩중...</div>;
-  // }
-  //
-  // if (data) {
-  //   return <Redirect to="/workspace/sleact/channel/일반" />;
-  // }
+  if (data) {
+    return <Redirect to="/workspace/sleact/channel/일반" />;
+  }
 
   // console.log(error, userData);
   // if (!error && userData) {
@@ -65,7 +67,7 @@ const LogIn = () => {
           </div>
           {logInError && <Error>이메일과 비밀번호 조합이 일치하지 않습니다.</Error>}
         </Label>
-        `<Button type="submit">로그인</Button>
+        <Button type="submit">로그인</Button>
       </Form>
       <LinkContainer>
         아직 회원이 아니신가요?&nbsp;
