@@ -10,7 +10,6 @@ const Modal: FC<Props> = ({ show, children, onCloseModal }) => {
     e.stopPropagation();
   }, []);
 
-  console.log(show);
   if (!show) {
     return null;
   }

@@ -47,4 +47,17 @@ false를 할경우 서버에 요청까지도 하지 않는다.
 # console.log 단축키
 'hi'.log => console.log('hi');
 
-# hooks는 return아래, for, if안에 있으면 안된다. 
+# hooks는 return아래, for, if안에 있으면 안된다.
+
+# NavLink vs Link
+NavLink는 activeClassName를 추가할 수 있다.
+to 가 가리키는 주소와 현재 주소가 같다면 activeClassName의 클래스가 적용된다.
+activeClassName="selected" 
+
+# component, container 안쓰는 이유
+hooks쓰면서 component, container를 사용하지 않는다.
+props를 넘길 필요가 없기 때문이다. hooks로도 데이터 자체를 갖고올 수 있기 때문이다.
+
+# response 데이터가 html로 오면 없는 주소를 타이핑 했을 확률이 있다!
+
+# eslint-react-hooks도 설치하자.
