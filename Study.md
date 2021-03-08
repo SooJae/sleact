@@ -61,3 +61,61 @@ props를 넘길 필요가 없기 때문이다. hooks로도 데이터 자체를 �
 # response 데이터가 html로 오면 없는 주소를 타이핑 했을 확률이 있다!
 
 # eslint-react-hooks도 설치하자.
+
+
+# 함수를 호출하는 또 다른 방법
+a``;
+위와 같이 하면 함수가 호출된다.a() 와 같은 역할이다.
+tagged template literal 이라고 부른다.
+아래 부분은 사실 styled컴포넌트 에 있는 button이라는 메서드를 실행하는 것이다.
+```js
+export const EachMention = styled.button<{ focus: boolean }>`
+  padding: 4px 20px;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  color: rgb(28, 29, 28);
+  width: 100%;
+  & img {
+    margin-right: 5px;
+  }
+  ${({ focus }) =>
+    focus &&
+    `
+    background: #1264a3;
+    color: white;
+  `};
+`;
+```
+
+# 기존에 스타일링 되어있는 컴포넌트에 다시 스타일 적용하기
+```js
+export const MentionsTextarea = styled(MentionsInput)` // styled(MentionsInput)을 사용하여 스타일이 적용 되어있는 MentionInput에 또 다시 스타일 적용하기
+  font-family: Slack-Lato, appleLogo, sans-serif;
+  font-size: 15px;
+  padding: 8px 9px;
+  width: 100%;
+  & strong {
+    background: skyblue;
+  }
+  & textarea {
+    height: 44px;
+    padding: 9px 10px !important;
+    outline: none !important;
+    border-radius: 4px !important;
+    resize: none !important;
+    line-height: 22px;
+    border: none;
+  }
+  & ul {
+    border: 1px solid lightgray;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 9px 10px;
+    background: white;
+    border-radius: 4px;
+    width: 150px;
+  }
+`;
+```
