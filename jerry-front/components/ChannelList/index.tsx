@@ -1,6 +1,3 @@
-// import useSocket from '@hooks/useSocket';
-// import { CollapseButton } from '@components/DMList/styles';
-// import { CollapseButton } from '@components/DMList/styles';
 import { IChannel, IChat, IUser } from '@typings/db';
 import fetcher from '@utils/fetcher';
 import React, { FC, useCallback, useEffect, useState } from 'react';
