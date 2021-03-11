@@ -58,7 +58,7 @@ const DirectMessage = () => {
           .catch(console.error);
       }
     },
-    [chat, chatData, myData, userData, workspace, id],
+    [chat, chatData, id, mutateChat, myData, revalidate, setChat, userData, workspace],
   );
 
   const onMessage = useCallback((data: IDM) => {

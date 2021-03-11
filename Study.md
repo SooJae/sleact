@@ -123,6 +123,10 @@ export const MentionsTextarea = styled(MentionsInput)` // styled(MentionsInput)�
 # memo
 props가 똑같으면 부모 컴포넌트가 리렌더링이 되어도 자식 컴포넌트는 리렌더링 되지 않는다.
 
+# eslint-react-hooks
+npm i -D eslint-config-react-app eslint-plugin-flowtype eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react  @typescript-eslint/parser  @typescript-eslint/eslint-plugin eslint-plugin-react-hooks    
+
 
 # forRoot
 설정을 넣어주기 위해
+
